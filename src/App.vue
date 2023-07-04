@@ -1,5 +1,6 @@
 <script setup>
 import GeneralView from './views/GeneralView.vue';
+import {RouterLink} from 'vue-router';
 
 </script>
 
@@ -8,10 +9,14 @@ import GeneralView from './views/GeneralView.vue';
     <header>
         <img id="logo" src="./assets/images/logo_sakura.png" alt="Logo">
     </header>
-    <GeneralView/>
+    <RouterView />
 </template>
 
 <style>
+    body {
+        background-color: rgba(255, 0, 255, 0.221);
+    }
+
     header {
         text-align: center;
     }

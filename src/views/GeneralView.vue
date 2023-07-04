@@ -1,6 +1,10 @@
 <script setup>
-    import { ref } from "vue";
+    import { ref } from "vue"
     import ConnectApi from "../services/ConnectApi.js"
+    import { useRouter } from "vue-router";
+    import HomeView from "./HomeView.vue"
+
+    const router = useRouter();
 
     const response = ref();
 
@@ -13,7 +17,11 @@
 
     const chooseCard = () => {
         if (counter.value === 3) {
-            changeView ();
+            router.push ( {
+                path: '/',
+                name: 'home',
+                component: HomeView
+            })
         }
         else {
             (counter.value)++;
