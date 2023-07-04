@@ -31,12 +31,26 @@
 
     const goUp = () => {
         shuffle.value = (shuffle.value)-9;
+        if (shuffle.value === 9){
+            document.getElementById("arrowUp").style.visibility = "hidden";
+        }
+        if (shuffle.value === 46){
+            shuffle.value = 54;
+        }
+        if (shuffle.value < 55){
+            document.getElementById("arrowDown").style.visibility = "visible";
+        }
+
     }
 
     const goDown = () => {
         shuffle.value = (shuffle.value)+9;
         if (shuffle.value !== 9){
             document.getElementById("arrowUp").style.visibility = "visible";
+        }
+        if (shuffle.value > 54){
+            document.getElementById("arrowDown").style.visibility = "hidden";
+            shuffle.value = 55;
         }
     }
 
@@ -49,7 +63,7 @@
     <header>
         <input :value=timeline type="text">
         <img id="arrowUp" @click="goUp()" src="../assets/images/arrow.png" alt="Arrow up">
-        <input type="text">
+        <input :value=shuffle type="text">
     </header>
     <main>
         <img class="card" @click="chooseCard()" v-for="index in 9" :key="index" src="../assets/images/card_back.jpg" alt="Card">
