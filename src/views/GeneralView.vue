@@ -21,6 +21,7 @@
                 path: '/',
                 name: 'home',
                 component: HomeView
+                
             })
         }
         else {
@@ -78,7 +79,7 @@
         <input :value="shuffle + '/55'" type="text">
     </header>
     <main>
-        <img class="card" @click="chooseCard()" v-for="index in amountOfCards" :key="index" src="../assets/images/card_back.jpg" alt="Card">
+        <img class="card" @click="chooseCard()" v-for="index in amountOfCards" :key="index" src="../assets/images/card_reverse.jpg" alt="Card">
     </main>
     <footer>
         <img id="arrowDown" @click="goDown()" src="../assets/images/arrow.png" alt="Arrow down">
@@ -106,6 +107,9 @@
         width: 30vw;
         border: 5px solid hotpink;
         background-color: pink;
+        color: purple;
+        text-align: center;
+        font-weight: bold;
     }
 
     main {

@@ -10,11 +10,12 @@ import {RouterLink} from 'vue-router';
         <img id="logo" src="./assets/images/logo_sakura.png" alt="Logo">
     </header>
     <RouterView />
+    <!-- <GeneralView /> -->
 </template>
 
 <style>
     body {
-        background-color: rgba(255, 0, 255, 0.221);
+        background-color: rgba(255, 0, 255, 0.164);
     }
 
     header {
