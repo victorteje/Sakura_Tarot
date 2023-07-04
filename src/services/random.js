@@ -22,7 +22,7 @@ const aleatorio=()=>{
             arr[j]='x'
             i++;
         }
-        if(i===9){
+        if(i===3){
             salir=false;
         }
     }while(salir);
