@@ -1,7 +1,7 @@
 <script setup>
 import GeneralView from './views/GeneralView.vue';
 import {RouterLink} from 'vue-router';
-
+import CardComponent from './components/CardComponent.vue';
 </script>
 
 
