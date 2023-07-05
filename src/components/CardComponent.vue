@@ -5,7 +5,7 @@ import ConnectApi from '../services/ConnectApi';
 let props=defineProps({
     arrayOfChosen:{
         type: Array, 
-        default:[4, 3, 54]
+        default:[4, 50, 54]
     }
 });
 
@@ -22,14 +22,12 @@ RetrieveCard(arrayIndex);
 
 function RetrieveCard(index){
     let data=ConnectApi(IncomingArray.value[index]);
-    console.log(data);
+    
     data.then(x=>{
         cardSrc.value=x.sakuraCard;
         cardMeaning.value=x.meaning;
-        //console.log(cardSrc.value);
     });
 }
-
 
 function ForwardCard(){
     document.querySelector(".arrowLeft").classList.remove("invisible");
@@ -67,6 +65,7 @@ function BackwardCard(){
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fleur+De+Leah&family=Great+Vibes&family=VT323&display=swap');
 
 #mainDiv{
     margin: 0 auto;
@@ -74,10 +73,16 @@ function BackwardCard(){
     border-radius: 5px;
     width: 80vw;
     text-align: center;
+    font-family: 'Fleur De Leah';
+
+    background-color: rgba(255, 192, 203, 0.542);
+    background-image: url("../assets/images/bgFlowers.png");
 }
 
 #mainDiv > img{
     min-height: 50vh;
+    box-shadow: 6px 20px 10px rgb(187, 121, 132);
+    border-radius: 5px;
 }
 
 #timeNav{
@@ -92,32 +97,48 @@ p{
     border-radius: 5px;
     width: 75vw;
     min-height: 10vh;
-    padding: 1vh 1.5vw;
+    padding: 1vh 2.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 6px 20px 10px rgb(187, 121, 132); 
+    font-size: 1.5rem;  
+
+    font-family: 'Great Vibes', cursive;
+}
+
+h3{
+    font-size: 3rem;
+    margin: 0;
+    color: #f706b6;
+
+    text-shadow: -1px -1px 1px yellow, 1px -1px 1px orange, -1px 1px 1px yellow, 1px 1px 1px orange;
 }
 
 .arrowLeft{
     transform: rotate(90deg);
     width: 10vw;
-    cursor: pointer;   
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.654);
+    border-radius: 15px;   
 }
 
 .arrowRight{
     transform: rotate(-90deg);
     width: 10vw;
     cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.654);
+    border-radius: 15px;
 }
 
 .arrowLeft:hover{
-    transform: scale(1.2) rotate(90deg);
+    transform: scale(1.2) rotate(90deg);    
 }
 
 .arrowRight:hover{
-    transform: scale(1.2) rotate(-90deg);
+    transform: scale(1.2) rotate(-90deg);   
 }
-
 
 .invisible{
     visibility: hidden;
