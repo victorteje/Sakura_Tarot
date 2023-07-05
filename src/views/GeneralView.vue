@@ -49,6 +49,7 @@
         if (shuffle.value < 55){
             document.getElementById("arrowDown").style.visibility = "visible";
             amountOfCards.value = 9;
+            document.getElementById("sakuraBig").style.display = "none";
         }
     }
     
@@ -57,11 +58,13 @@
         shuffle.value = (shuffle.value)+9;
         if (shuffle.value !== 9){
             document.getElementById("arrowUp").style.visibility = "visible";
+            
         }
         if (shuffle.value > 54){
             document.getElementById("arrowDown").style.visibility = "hidden";
             shuffle.value = 55;
             amountOfCards.value = 1;
+            document.getElementById("sakuraBig").style.display = "flex";
         }
     }
 
@@ -76,40 +79,53 @@
     <header>
         <input :value=timeline type="text">
         <img id="arrowUp" @click="goUp()" src="../assets/images/arrow.png" alt="Arrow up">
-        <input :value="shuffle + '/55'" type="text">
+        <input id="cardCounter" :value="shuffle + '/55'" type="text">
     </header>
     <main>
         <img class="card" @click="chooseCard()" v-for="index in amountOfCards" :key="index" src="../assets/images/card_reverse.jpg" alt="Card">
+        <img id="sakuraBig" src="../assets/images/sakura_big.png" alt="Sakura">
     </main>
     <footer>
+        <img src="../assets/images/sakura_kinomoto2.png" alt="Image of Sakura Kinomoto">
         <img id="arrowDown" @click="goDown()" src="../assets/images/arrow.png" alt="Arrow down">
+        <img src="../assets/images/kero.png" alt="Image of Kero">
     </footer>
 </template>
 
 <style scoped>
-    header, footer {
+   
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fleur+De+Leah&family=Great+Vibes&family=VT323&display=swap');
+
+    header {
         display: flex;
         justify-content: space-around;
     }
 
     #arrowUp {
-        height: 8vh;
+        height: 7vh;
         transform: rotate(180deg);
         visibility: hidden;
     }
 
     #arrowDown {
-        height: 8vh;
+        height: 7vh;
     }
 
     input {
-        height: 5vh;
+        height: 6vh;
         width: 30vw;
-        border: 5px solid hotpink;
-        background-color: pink;
-        color: purple;
+        color: #f70071;
+        text-shadow: 1px 1px #f4ff43;
         text-align: center;
         font-weight: bold;
+        background: transparent;
+        border: none;
+        font-size: 4vh;
+        font-family: 'Fleur De Leah';
+    }
+
+    #cardCounter {
+        font-size: 3.3vh;
     }
 
     main {
@@ -118,8 +134,22 @@
         flex-wrap: wrap;
         height: 75vh;
     }
+
     .card {
-        height: 24vh;
+        height: 22vh;
         margin: .3vh 3vw;
     }
+
+    footer {
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        gap: 4vh;
+    }
+
+    #sakuraBig {
+        height: 50vh;
+        display: none;
+    }
+
 </style>
