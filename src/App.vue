@@ -1,6 +1,6 @@
 <script setup>
 import GeneralView from './views/GeneralView.vue';
-import {RouterLink} from 'vue-router';
+import {RouterLink, RouterView} from 'vue-router';
 import CardComponent from './components/CardComponent.vue';
 </script>
 
@@ -8,7 +8,7 @@ import CardComponent from './components/CardComponent.vue';
 <template>
     <header>
         <img class="cherryBlossom" src="./assets/images/cherry-blossom1.png" alt="Cherry blossom left">
-        <img id="logo" src="./assets/images/logo_sakura.png" alt="Logo">
+        <RouterLink to="/"><img id="logo" src="./assets/images/logo_sakura.png" alt="Logo"></RouterLink>
         <img class="cherryBlossom" src="./assets/images/cherry-blossom1.png" alt="Cherry blossom right">
     </header>
     <RouterView />

@@ -1,19 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import GeneralView from '../views/GeneralView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import GeneralView from '../views/GeneralView.vue';
+import CardComponent from '../components/CardComponent.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/home',
-      name: 'home',
-      component: HomeView
-    },
+    
     {
       path: '/',
       name: 'General',
       component: GeneralView
+    },
+    {
+      path: '/CardComponent',
+      name: 'CardComponent',
+      component: CardComponent
     },
     {
       path: '/about',

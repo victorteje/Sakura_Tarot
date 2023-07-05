@@ -3,6 +3,7 @@
     import ConnectApi from "../services/ConnectApi.js"
     import { useRouter } from "vue-router";
     import HomeView from "./HomeView.vue"
+    import CardComponent from "../components/CardComponent.vue";
 
     const router = useRouter();
 
@@ -19,9 +20,8 @@
         if (counter.value === 3) {
             router.push ( {
                 path: '/',
-                name: 'home',
-                component: HomeView
-                
+                name: 'CardComponent',
+                component: CardComponent                
             })
         }
         else {

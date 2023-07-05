@@ -2,12 +2,23 @@
 import { ref } from 'vue';
 import ConnectApi from '../services/ConnectApi';
 
-let props=defineProps({
-    arrayOfChosen:{
-        type: Array, 
-        default:[4, 50, 54]
-    }
-});
+const times=3;
+const max=55;
+const min=1;
+const aleatory =()=>{
+    let arr=new Array();
+    let chance=0;
+    do{
+        chance=Math.floor(Math.random() * (max - min + 1) + min);
+        if(!(arr.includes(chance))){
+            arr.push(chance);
+        }
+    }while(arr.length<times);
+    return arr;
+}
+
+//const arr=aleatory();
+//console.log(arr);
 
 const arrayTimes=["Pasado", "Presente", "Futuro"];
 let arrayIndex=0;
@@ -17,7 +28,7 @@ const cardSrc=ref();
 const cardMeaning=ref();
 const timeMoment=ref(arrayTimes[0]);
 
-IncomingArray.value=props.arrayOfChosen;
+IncomingArray.value=aleatory();
 RetrieveCard(arrayIndex);
 
 function RetrieveCard(index){
