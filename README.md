@@ -1,14 +1,8 @@
 # Sakura_Tarot
 
-This template should help get you started developing with Vue 3 in Vite.
+A virtual tarot to determine our past, present and future, extracting information from the Sakura API.
+The user will select three random cards (one for each timeline) and be told the meaning of each one.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
@@ -22,8 +16,8 @@ npm install
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Axios
 
 ```sh
-npm run build
+npm install axios
 ```
