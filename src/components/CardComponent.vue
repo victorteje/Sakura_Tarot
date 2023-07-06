@@ -65,11 +65,11 @@ function BackwardCard(){
     <h3>{{ timeMoment }}</h3>
     <img :src="cardSrc" alt="Chosen Card">
     <p>{{ cardMeaning }}</p>
+</div>
     <div id="timeNav">
         <img src="../assets/images/arrow.png" alt="Step Backwards" class="arrowLeft invisible" @click="BackwardCard()">
         <img src="../assets/images/arrow.png" alt="Step Forward" class="arrowRight" @click="ForwardCard()">
     </div>    
-</div>
 </template>
 
 <style scoped>
@@ -82,13 +82,12 @@ function BackwardCard(){
     width: 80vw;
     text-align: center;
     font-family: 'Fleur De Leah';
-
     background-color: rgba(255, 192, 203, 0.542);
     background-image: url("../assets/images/bgFlowers.png");
 }
 
 #mainDiv > img{
-    min-height: 50vh;
+    height: 54vh;
     box-shadow: 6px 20px 10px rgb(187, 121, 132);
     border-radius: 5px;
 }
@@ -100,7 +99,7 @@ function BackwardCard(){
 }
 
 p{
-    background-color: pink;
+    background-color: #ffafea;
     border:0;
     border-radius: 5px;
     width: 75vw;
@@ -111,15 +110,14 @@ p{
     align-items: center;
     box-shadow: 6px 20px 10px rgb(187, 121, 132); 
     font-size: 1.5rem;  
-
     font-family: 'Great Vibes', cursive;
+    color: #f706b6;
 }
 
 h3{
     font-size: 3rem;
     margin: 0;
     color: #f706b6;
-
     text-shadow: -1px -1px 1px yellow, 1px -1px 1px orange, -1px 1px 1px yellow, 1px 1px 1px orange;
 }
 
