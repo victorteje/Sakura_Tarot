@@ -101,9 +101,6 @@
 </script>
 
 <template>
-    <!-- <div>        
-        <p>{{ response.spanishName }}</p>
-    </div> -->
     <header>
         <input :value=timeline type="text">
         <img id="arrowUp" @click="goUp()" src="../assets/images/arrow.png" alt="Arrow up">
@@ -159,6 +156,8 @@
     main {
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
         flex-wrap: wrap;
         height: 75vh;
     }
