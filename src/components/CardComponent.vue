@@ -80,10 +80,15 @@ function BackwardCard(){
     border: 2px solid white;
     border-radius: 5px;
     width: 80vw;
+    height: 80vh;
+    margin-top: 1vh;
     text-align: center;
     font-family: 'Fleur De Leah';
     background-color: rgba(255, 192, 203, 0.542);
-    background-image: url("../assets/images/bgFlowers.png");
+    /* background-image: url("../assets/images/bgFlowers.png"); */
+    background-image: url("../assets/images/flower_background.jpg");
+    background-size: contain;
+    background-repeat: repeat;
 }
 
 #mainDiv > img{
@@ -102,9 +107,9 @@ p{
     background-color: #f706b6;
     border:0;
     border-radius: 5px;
-    width: 75vw;
-    min-height: 10vh;
-    padding: 1vh 2.5vw;
+    width: 70vw;
+    min-height: 9vh;
+    padding: .5vh 2.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,13 +117,17 @@ p{
     font-size: 1.5rem;  
     font-family: 'Great Vibes', cursive;
     color: #f4fc70;
+    text-align: center;
+    margin: 1vh auto;
 }
 
 h3{
     font-size: 3rem;
     margin: 0;
-    color: #f706b6;
-    text-shadow: -1px -1px 1px yellow, 1px -1px 1px orange, -1px 1px 1px yellow, 1px 1px 1px orange;
+    color: #fcbb14;
+    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+    /* color: #f706b6;
+    text-shadow: -1px -1px 1px yellow, 1px -1px 1px orange, -1px 1px 1px yellow, 1px 1px 1px orange; */
 }
 
 .arrowLeft{
