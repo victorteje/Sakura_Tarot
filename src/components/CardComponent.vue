@@ -99,7 +99,7 @@ function BackwardCard(){
 }
 
 p{
-    background-color: #ffafea;
+    background-color: #f706b6;
     border:0;
     border-radius: 5px;
     width: 75vw;
@@ -111,7 +111,7 @@ p{
     box-shadow: 6px 20px 10px rgb(187, 121, 132); 
     font-size: 1.5rem;  
     font-family: 'Great Vibes', cursive;
-    color: #f706b6;
+    color: #f4fc70;
 }
 
 h3{
@@ -124,18 +124,13 @@ h3{
 .arrowLeft{
     transform: rotate(90deg);
     width: 10vw;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.654);
-    border-radius: 15px;   
+    cursor: pointer; 
 }
 
 .arrowRight{
     transform: rotate(-90deg);
     width: 10vw;
     cursor: pointer;
-
-    background: rgba(255, 255, 255, 0.654);
-    border-radius: 15px;
 }
 
 .arrowLeft:hover{
