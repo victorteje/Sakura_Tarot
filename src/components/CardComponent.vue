@@ -17,9 +17,6 @@ const aleatory =()=>{
     return arr;
 }
 
-//const arr=aleatory();
-//console.log(arr);
-
 const arrayTimes=["Pasado", "Presente", "Futuro"];
 let arrayIndex=0;
 

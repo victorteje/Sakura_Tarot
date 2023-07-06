@@ -6,8 +6,8 @@
     import CardComponent from "../components/CardComponent.vue";
 
     const router = useRouter();
-
     const response = ref();
+    let arrayIdentification=[];
 
     response.value=ConnectApi(6);
     (response.value).then(x=>response.value=x)
@@ -16,7 +16,7 @@
 
     const timeline = ref("Pasado");
 
-    const chooseCard = () => {
+    const chooseCard = (event, index) => {
         if (counter.value === 3) {
             router.push ( {
                 path: '/',
@@ -33,12 +33,22 @@
             //     timeline.value = "Futuro"
             // }
             counter.value === 2?timeline.value ="Presente":timeline.value = "Futuro";
+
+            arrayIdentification.push([shuffle.value,index]);            
+
+            (event.target).classList.add("disabledCard");
         }
     }
 
     const shuffle = ref(9);
 
     const goUp = () => {
+
+        let imgInMain=document.querySelectorAll("main img");
+        for(var i=0; i<imgInMain.length;i++){
+            imgInMain[i].classList.remove("disabledCard");
+        }
+        
         shuffle.value = (shuffle.value)-9;
         if (shuffle.value === 9){
             document.getElementById("arrowUp").style.visibility = "hidden";
@@ -51,10 +61,23 @@
             amountOfCards.value = 9;
             document.getElementById("sakuraBig").style.display = "none";
         }
+
+        arrayIdentification.forEach(x=>{
+            if(x[0]===shuffle.value){
+                
+                document.querySelector("main img:nth-of-type("+x[1]+")").classList.add("disabledCard");
+            }
+        })
     }
     
     const amountOfCards = ref (9);
     const goDown = () => {
+
+        let imgInMain=document.querySelectorAll("main img");
+        for(var i=0; i<imgInMain.length;i++){
+            imgInMain[i].classList.remove("disabledCard");
+        }
+
         shuffle.value = (shuffle.value)+9;
         if (shuffle.value !== 9){
             document.getElementById("arrowUp").style.visibility = "visible";
@@ -66,9 +89,14 @@
             amountOfCards.value = 1;
             document.getElementById("sakuraBig").style.display = "flex";
         }
+
+        arrayIdentification.forEach(x=>{
+            if(x[0]===shuffle.value){
+                console.log(document.querySelector("main img:nth-of-type("+x[1]+")"));
+                document.querySelector("main img:nth-of-type("+x[1]+")").classList.add("disabledCard");
+            }
+        })
     }
-
-
 
 </script>
 
@@ -82,7 +110,7 @@
         <input id="cardCounter" :value="shuffle + '/55'" type="text">
     </header>
     <main>
-        <img class="card" @click="chooseCard()" v-for="index in amountOfCards" :key="index" src="../assets/images/card_reverse.jpg" alt="Card">
+        <img class="card" @click="chooseCard($event, index)" v-for="index in amountOfCards" :key="index" src="../assets/images/card_reverse.jpg" alt="Card">
         <img id="sakuraBig" src="../assets/images/sakura_big.png" alt="Sakura">
     </main>
     <footer>
@@ -150,6 +178,11 @@
     #sakuraBig {
         height: 50vh;
         display: none;
+    }
+
+    .disabledCard{
+        filter: saturate(80%) grayscale(80%);    
+        pointer-events: none;    
     }
 
 </style>
