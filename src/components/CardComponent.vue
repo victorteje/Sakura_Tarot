@@ -87,8 +87,8 @@ function BackwardCard(){
     background-color: rgba(255, 192, 203, 0.542);
     /* background-image: url("../assets/images/bgFlowers.png"); */
     background-image: url("../assets/images/flower_background.jpg");
-    background-size: contain;
-    background-repeat: repeat;
+    background-size: cover;
+    
 }
 
 #mainDiv > img{
@@ -117,6 +117,7 @@ p{
     font-size: 1.5rem;  
     font-family: 'Great Vibes', cursive;
     color: #f4fc70;
+    text-shadow: 1px 1px 1px black;
     text-align: center;
     margin: 1vh auto;
 }
